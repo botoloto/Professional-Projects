@@ -4,10 +4,9 @@ import numpy as np
 from pathlib import Path
 import os
 
-path_file =  os.path.abspath(str(Path.home()) +'\OneDrive - HEALTHINK\Inteligência\Aplicações\Portal Logado\Conta Nova.xlsx')
+path_file =  os.path.abspath(str(Path.home()) +'\Downloads\Portal Logado\new-account.xlsx')
 outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
 accounts = outlook.Accounts
-
 
 os.system('cls')
 
@@ -38,16 +37,16 @@ Seu login é: { destinatario }
 Sua nova senha é: { senha }
 
 Você pode acessar sua conta através do link abaixo:
-Acesso: https://www.htksaude.com.br/corporate/login
+Acesso: https://www.empresa.com.br/corporate/login
 
 Este é um e-mail automatico, não responda.
 
 Atenciosamente,
-Equipe Healthink
+Equipe
                 """
 
 
-            mail.Subject = '[Portal Logado] - Criação usuário - Healthink'
+            mail.Subject = '[Portal Logado] - Criação usuário - Empresa'
             mail._oleobj_.Invoke(*(64209,0,8,0,account))
             mail.Body = msg
 
